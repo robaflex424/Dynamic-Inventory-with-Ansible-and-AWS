@@ -1,28 +1,48 @@
-This small project shows how dynamic inventories work
+# Dynamic Inventory with Ansible and AWS
 
-Requirements:
-    1. key pair to access the instance
-    2. set permissions for key pair
-        **chmod 400 {key pair name}**
+This small project demonstrates how **Ansible dynamic inventories** work using **AWS EC2** instances.  
+Instead of manually maintaining a static `hosts` file, the inventory is automatically fetched from AWS using the **boto3** and **botocore** Python libraries.
 
-To use this project for your needs you have to follow these steps
+---
 
-#These instructions are for OS based on debian
+## Requirements
 
-1. Install python
-    
-    sudo apt install python3
+Before starting, ensure you have:
 
-2. Create venv
+1. An **AWS key pair** to access your EC2 instance(s).  
+   - You can create or import one via the AWS Management Console or CLI.  
+   - Keep the `.pem` file safe and secure.
 
-    python3 -m venv ~/your_project_venv
-    
-3. Activate venv
+2. **AWS credentials** configured on your system. You can set these up using the AWS CLI or environment variables.
 
-    source ~/{path to your project venv}/bin/activate
+---
 
-4. Install boto3 and botocore
+## Setup Instructions
 
-    pip install boto3 botocore
+1. **Install Python 3** and create a virtual environment.  
+2. **Activate the virtual environment**.  
+3. **Install Python dependencies**:  
+   - **boto3**  
+   - **botocore**  
+   - **ansible**
 
-after that you can run your commands successfully
+If you dont have python and all the dependencies installed, follow the commands in **python_configure.txt**.
+
+---
+
+## Usage
+
+Once setup is complete, you can run **Ansible commands** with the dynamic inventory plugin to automatically fetch EC2 instance information.  
+
+---
+
+## Notes
+
+- The `aws_ec2.yml` file defines how Ansible queries AWS for instance information.  
+- **boto3** automatically picks up your AWS credentials from environment variables, AWS CLI config files, or IAM roles if running inside AWS.  
+- Always keep your **private key file** secure and never commit it to version control.  
+
+---
+
+**Repo Description:**  
+A sample **Ansible** project demonstrating **dynamic inventory** with **AWS EC2**, using **boto3** and **botocore**.  

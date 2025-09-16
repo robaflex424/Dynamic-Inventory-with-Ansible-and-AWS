@@ -1,0 +1,25 @@
+-----------------------------------------------------------------------------
+
+# Install python.
+
+1. sudo apt install python3
+
+-----------------------------------------------------------------------------
+
+#  Create virtual environment.
+
+2. python3 -m venv ~/your_project_venv
+
+-----------------------------------------------------------------------------
+
+#  Activate virtual environment.
+
+3. source ~/{path to your project venv}/bin/activate
+
+-----------------------------------------------------------------------------
+
+# Install boto3, botocore, and ansible.
+
+4. pip install boto3 botocore ansible
+
+-----------------------------------------------------------------------------
