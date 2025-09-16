@@ -1,0 +1,3 @@
+ansible_key.pem.bak
+ansible_new_key.pem
+ansible-venv/

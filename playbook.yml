@@ -1,0 +1,22 @@
+---
+- name: Playbook to install basic Nginx/httpd
+  become: true
+  hosts: all
+  
+  pre_tasks:
+    - name: update Cache
+      ansible.builtin.yum:
+        update_cache: true
+
+  tasks:
+
+    - name: Install httpd
+      ansible.builtin.package:
+        name: httpd
+        state: present
+
+    - name: Ensure httpd is started and enableed at the boot
+      ansible.builtin.service:
+        name: httpd
+        state: started
+        enabled: true

@@ -1,0 +1,13 @@
+plugin: aws_ec2
+regions: 
+  - eu-central-1
+filters:
+  instance-state-name:
+  - running
+keyed_groups:
+  - key: instance_type
+    prefix: instance_type
+compose:
+  ansible_host: public_ip_address
+  my_role: tags.Role
+  instance_type: instance_type
