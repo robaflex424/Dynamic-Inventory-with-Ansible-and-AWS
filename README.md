@@ -40,7 +40,6 @@ Once setup is complete, you can run **Ansible commands** with the dynamic invent
 
 - The `aws_ec2.yml` file defines how Ansible queries AWS for instance information.  
 - **boto3** automatically picks up your AWS credentials from environment variables, AWS CLI config files, or IAM roles if running inside AWS.  
-- Always keep your **private key file** secure and never commit it to version control.  
 
 ---
 
